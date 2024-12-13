@@ -4,11 +4,12 @@ import java.util.Stack;
 public class StackBasedDFS {
     private final boolean[] marked;
     private final int[] edgeTo;
-    private int s;
+    private final int s;
 
     public StackBasedDFS(Graph g, int s) {
         marked = new boolean[g.size()];
         edgeTo = new int[g.size()];
+        this.s = s;
 
         dfs(g, s);
     }
@@ -80,7 +81,7 @@ public class StackBasedDFS {
         graph.addEdge(3, 4);
         graph.addEdge(4, 5);
 
-        StackBasedDFS dfs = new StackBasedDFS(graph, 0);
+        StackBasedDFS dfs = new StackBasedDFS(graph, 2);
 
         for (int v = 0; v < graph.size(); v++) {
             if (dfs.hasPathTo(v)) System.out.println("Path to " + v + ": " + dfs.pathTo(v));
