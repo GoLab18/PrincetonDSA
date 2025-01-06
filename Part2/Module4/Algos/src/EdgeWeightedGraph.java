@@ -19,7 +19,7 @@ public class EdgeWeightedGraph {
     }
 
     public Iterable<Edge> edges() {
-        ArrayList<Edge> b = new ArrayList<Edge>();
+        ArrayList<Edge> b = new ArrayList<>();
 
         for (int v = 0; v < V; v++) {
             for (Edge e : adj[v]) if (e.other(v) > v) b.add(e);
